@@ -70,7 +70,7 @@ export default function SignUp() {
   return (
     <>
       <h2>Sign Up Here</h2>
-      <form onSubmit={handleSubmit}>
+      <form className="signUp" onSubmit={handleSubmit}>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
         {successMessage && (
           <div className="success-message">{successMessage}</div>
@@ -176,8 +176,10 @@ export default function SignUp() {
           onChange={(e) => setPhone(e.target.value)}
           placeholder="Enter Phone"
         />
-        <button type="submit">Create</button>
       </form>
+        <div className="signUp-button-wrapper">
+        <button type="submit">Create</button>
+        </div>
     </>
   );
 }

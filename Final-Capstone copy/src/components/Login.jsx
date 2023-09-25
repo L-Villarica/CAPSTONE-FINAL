@@ -33,7 +33,7 @@ export default function Login({ token }) {
 
   return (
     <div>
-      <form onSubmit={handleLogin}>
+      <form className="login" onSubmit={handleLogin}>
         <label>Username:</label>
         <input
           type="text"
@@ -50,8 +50,10 @@ export default function Login({ token }) {
           placeholder="Enter Password"
           required
         />
-        <button type="submit">Login</button>
       </form>
+        <div className="login-button-wrapper">
+        <button type="submit">Login</button>
+        </div>
 
       <div className="Profile-Container"></div>
     </div>
