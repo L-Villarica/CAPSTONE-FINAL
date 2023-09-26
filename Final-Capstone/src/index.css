@@ -472,19 +472,43 @@ nav img {
 
 /* BREAKPOINTS */
 @media screen and (max-width: 1024px) {
-  .all-products-container-card, .filter, .navbar, .signUp-body, .cart {
+  .all-products-container-card{
     width: 33%;
+    flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .navbar, .filter, .navbar, .signUp-body, .cart   {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  .all-products-container-card, .filter, .navbar, .signUp-body, .cart  {
+  .all-products-container-card {
     width: 50%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar, .filter, .navbar, .signUp-body, .cart  {
+    width: 100%;
+    flex-wrap: wrap;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .all-products-container-card, .filter, .navbar, .signUp-body, .cart  {
+  .all-products-container-card{
     width: 100%;
+    flex-wrap: wrap;
   }
-  
+}
+
+@media screen and (max-width: 425px) {
+  .navbar, .filter, .navbar, .signUp-body, .cart   {
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }
