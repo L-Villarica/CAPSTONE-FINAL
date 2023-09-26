@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 export default function CheckoutPage({ cartItems, removeFromCart }) {
   return (
       <div className="checkout-form-container">

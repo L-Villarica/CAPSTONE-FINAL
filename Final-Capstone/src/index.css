@@ -472,18 +472,19 @@ nav img {
 
 /* BREAKPOINTS */
 @media screen and (max-width: 1024px) {
-  .all-products-container-card {
+  .all-products-container-card, .filter, .navbar  {
     width: 33%;
   }
 }
 @media screen and (max-width: 768px) {
-  .all-products-container-card {
+  .all-products-container-card, .filter, .navbar {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .all-products-container-card {
+  .all-products-container-card, .filter, .navbar {
     width: 100%;
   }
+  
 }
