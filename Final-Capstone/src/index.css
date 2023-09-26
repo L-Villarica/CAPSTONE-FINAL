@@ -472,18 +472,18 @@ nav img {
 
 /* BREAKPOINTS */
 @media screen and (max-width: 1024px) {
-  .all-products-container-card, .filter, .navbar  {
+  .all-products-container-card, .filter, .navbar, .signUp-body, .cart {
     width: 33%;
   }
 }
 @media screen and (max-width: 768px) {
-  .all-products-container-card, .filter, .navbar {
+  .all-products-container-card, .filter, .navbar, .signUp-body, .cart  {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .all-products-container-card, .filter, .navbar {
+  .all-products-container-card, .filter, .navbar, .signUp-body, .cart  {
     width: 100%;
   }
   
