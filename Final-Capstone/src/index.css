@@ -1,8 +1,102 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: middles;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+}
+blockquote,
+q {
+  quotes: '' '';
+}
 
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -75,11 +169,15 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-content: center;
+  align-items: center;
   justify-content: space-between;
   background-color: #191d22;
   color: white;
-  padding: 2em;
+  padding: 1em;
+}
+
+nav img {
+  vertical-align: middle;
 }
 
 .navbar-links-wrapper {
@@ -111,22 +209,22 @@ nav {
 }
 
 .single-product-container {
-  width: 100%;
-  height: 1000px;
+  width: 80%;
+  /* height: 1000px;  */
   font-size: 17px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   position: relative;
-  margin-top: 25px;
+  margin: 25px auto 25px auto;
 }
 
 .single-product-container--image {
   display: block;
-  width: auto;
-  height: 100%;
+  width: 100%;
+  /* height: 100%; */
   max-width: 300px;
-  max-height: 300px;
+  /* max-height: 300px; */
   border-radius: 9px;
   margin-bottom: 9px;
   margin: 0 auto;
@@ -141,6 +239,8 @@ nav {
   align-items: center;
   margin: 10px 10px;
   padding: 10px 10px;
+  font-weight: 900;
+  font-size: 24px;
 }
 
 .single-product-description {
@@ -152,6 +252,7 @@ nav {
   align-items: center;
   margin: 10px 10px;
   padding: 10px 10px;
+  font-weight: lighter;
 }
 
 .single-product-buttons-wrapper {
@@ -161,26 +262,36 @@ nav {
   justify-content: space-evenly;
 }
 
+.single-product-buttons-wrapper :hover {
+  background-color: orange;
+}
+
 .cart-buttons-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 200px;
 }
 
-.cart-container{
+.cart-buttons-wrapper :hover {
+  background-color: orange;
+}
+
+.cart-container {
   width: 100%;
   font-size: 17px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   position: relative;
 }
 
 .cart-container--image {
   display: block;
   width: auto;
-  height: 100%;
+  /* height: 100%; */
   max-width: 200px;
   max-height: 200px;
   border-radius: 9px;
@@ -188,13 +299,28 @@ nav {
   margin: 0 auto;
 }
 
-.cart-container-card{
+.cart-container-card {
   width: 100%;
   font-size: 17px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   position: relative;
+  margin-top: 40px;
+}
+
+.cart-wrapper {
+  display: flex;
+  padding: 40px;
+  box-shadow: 10px 10px 5px lightgray;
+}
+
+.cart-wrapper--text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+  justify-content: center;
 }
 
 .all-products-container {
@@ -252,16 +378,16 @@ nav {
   justify-content: space-evenly;
 }
 
-.product-buttons-wrapper :hover{
+.product-buttons-wrapper :hover {
   background-color: orange;
 }
 
-.login{
+/* .login {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: baseline;
-}
+} */
 
 .login-button-wrapper {
   display: flex;
@@ -270,11 +396,24 @@ nav {
   justify-content: space-evenly;
 }
 
-.signUp{
+.login-button-wrapper :hover {
+  background-color: orange;
+}
+
+.signUp,
+.login {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: baseline;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.signUp-body {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: center;
 }
 
 .signUp-button-wrapper {
@@ -282,6 +421,11 @@ nav {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  margin-top: 1em;
+}
+
+.signUp-button-wrapper :hover {
+  background-color: orange;
 }
 
 /* BREAKPOINTS */

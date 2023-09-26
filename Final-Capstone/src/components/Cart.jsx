@@ -1,18 +1,17 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-const BASE_URL = "https://fakestoreapi.com/carts/2";
+const BASE_URL = 'https://fakestoreapi.com/carts/2';
 
 export default function Cart({ removeFromCart, setCartItems, cartItems }) {
-
   const [totalPrice, setTotalPrice] = useState(0);
 
   async function FetchCart() {
     try {
-      if (cartItems.length === 0){
-      const response = await fetch(`${BASE_URL}`);
-      const result = await response.json();
-      fetchAdditionalProductInfo(result.products);
+      if (cartItems.length === 0) {
+        const response = await fetch(`${BASE_URL}`);
+        const result = await response.json();
+        fetchAdditionalProductInfo(result.products);
       }
     } catch (err) {
       console.log(err);
@@ -33,7 +32,7 @@ export default function Cart({ removeFromCart, setCartItems, cartItems }) {
       const productDetails = await Promise.all(promises);
       setCartItems(productDetails);
     } catch (error) {
-      console.error("Error fetching additional product info:", error);
+      console.error('Error fetching additional product info:', error);
     }
   };
 
@@ -60,36 +59,39 @@ export default function Cart({ removeFromCart, setCartItems, cartItems }) {
     setTotalPrice(totalPrice);
   }, [cartItems]);
 
-
   return cartItems.length === 0 ? (
-    <h2 className="cart_total">Your cart is currently empty.</h2>
+    <h2 className='cart_total'>Your cart is currently empty.</h2>
   ) : (
-    <div className="cart-container">
-      <div className="cart-container-card">
-        <h2>Shopping Cart</h2>
+    <div className='cart-container'>
+      <h2>Shopping Cart</h2>
+      <div className='cart-container-card'>
         {cartItems.map((item) => (
-          <div key={item.id}>
-            <p className="cart-item-title">{item.title}</p>
-            <p className="cart-item-quantity">Quantity: {item.count}</p>
-            <img
-              src={item.image}
-              alt={item.title}
-              className="cart-container--image"
-            />
-            <div className="cart-buttons-wrapper">
-              <button onClick={() => updateQuantity(item.id, item.count + 1)}>
-                +
-              </button>
-              <button onClick={() => updateQuantity(item.id, item.count - 1)}>
-                -
-              </button>
-              <button onClick={() => removeFromCart(item.id)}>
-                Remove Item
-              </button>
+          <div key={item.id} className='cart-wrapper'>
+            <div className='cart-wrapper--image'>
+              <img
+                src={item.image}
+                alt={item.title}
+                className='cart-container--image'
+              />
             </div>
-            <p>${item.price}</p>
-            <p>{item.date}</p>
- 
+            <div className='cart-wrapper--text'>
+              <p className='cart-item-title'>{item.title}</p>
+              <p className='cart-item-quantity'>Quantity: {item.count}</p>
+
+              <div className='cart-buttons-wrapper'>
+                <button onClick={() => updateQuantity(item.id, item.count + 1)}>
+                  +
+                </button>
+                <button onClick={() => updateQuantity(item.id, item.count - 1)}>
+                  -
+                </button>
+                <button onClick={() => removeFromCart(item.id)}>
+                  Remove Item
+                </button>
+              </div>
+              <p>${item.price}</p>
+              <p>{item.date}</p>
+            </div>
           </div>
         ))}
       </div>
