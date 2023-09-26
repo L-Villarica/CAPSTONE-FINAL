@@ -472,14 +472,28 @@ nav img {
 
 /* BREAKPOINTS */
 @media screen and (max-width: 1024px) {
-  .all-products-container-card{
+  .all-products-container-card {
     width: 33%;
     flex-wrap: wrap;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .navbar, .filter, .navbar, .signUp-body, .cart   {
+  .cart-wrapper {
+    width: 80%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .checkout-form-container {
+    width: 20%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar, .filter, .navbar, .signUp-body {
     width: 100%;
     flex-wrap: wrap;
   }
@@ -493,21 +507,49 @@ nav img {
 }
 
 @media screen and (max-width: 768px) {
-  .navbar, .filter, .navbar, .signUp-body, .cart  {
+  .cart-wrapper{
+    width: 80%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .checkout-form-container {
+    width: 20%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar, .filter, .navbar, .signUp-body {
+    width: %;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .all-products-container-card {
     width: 100%;
     flex-wrap: wrap;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .all-products-container-card{
-    width: 100%;
+  .cart-wrapper {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .checkout-form-container {
+    width: 10%;
     flex-wrap: wrap;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .navbar, .filter, .navbar, .signUp-body, .cart   {
+  .navbar, .filter, .navbar, .signUp-body {
     width: 100%;
     flex-wrap: wrap;
   }
