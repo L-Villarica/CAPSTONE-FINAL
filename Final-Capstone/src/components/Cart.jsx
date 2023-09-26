@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
+import CheckoutPage from './Checkout';
 
 const BASE_URL = 'https://fakestoreapi.com/carts/2';
 
@@ -45,23 +46,28 @@ export default function Cart({ removeFromCart, setCartItems, cartItems }) {
     });
     setCartItems(updatedCart);
   };
-
-  useEffect(() => {
-    FetchCart();
-  }, []);
-
+  
   useEffect(() => {
     // Calculate the total price whenever cartItems change
-    let totalPrice = 0;
-    cartItems.forEach((item) => {
-      totalPrice += item.price * item.count;
-    });
-    setTotalPrice(totalPrice);
+    if (cartItems.length > 0) {
+      let totalPrice = 0;
+      cartItems.forEach((item) => {
+        totalPrice += item.price * item.count;
+      });
+      setTotalPrice(totalPrice);
+    } else {
+      setTotalPrice(0)
+    }
   }, [cartItems]);
+  
+    useEffect(() => {
+      FetchCart();
+    }, []);
 
   return cartItems.length === 0 ? (
-    <h2 className='cart_total'>Your cart is currently empty.</h2>
+    <h2 className='cart-total'>Your cart is currently empty.</h2>
   ) : (
+    <>
     <div className='cart-container'>
       <h2>Shopping Cart</h2>
       <div className='cart-container-card'>
@@ -95,7 +101,11 @@ export default function Cart({ removeFromCart, setCartItems, cartItems }) {
           </div>
         ))}
       </div>
-      <p>Total Price: ${totalPrice.toFixed(2)}</p>
+      {totalPrice !== null && (
+      <p className='total'>Total Price: ${totalPrice.toFixed(2)}</p>
+      )}
     </div>
+    <CheckoutPage cartItems={cartItems} removeFromCart={removeFromCart} />
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import { useState } from "react";
 import GetAllProducts from "./components/GetAllProducts";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
@@ -7,46 +7,17 @@ import GetSingleProduct from "./components/GetSingleProduct";
 import { Routes, Route, Link } from "react-router-dom";
 import smiley from "./assets/smiley-sticker.svg";
 import "./App.css";
+import { SearchBar } from "./components/SearchBar"; // Import the SearchBar component here
 
 function App() {
   const [token, setToken] = useState(null);
   const [products, setProducts] = useState([]);
+  const [searchFilter, setSearchFilter] = useState("");//Default searching by Title
   const [cartItems, setCartItems] = useState(() => {
     // Initialize cartItems from local storage or as an empty array
     const storedCartItems = localStorage.getItem("cartItems");
     return storedCartItems ? JSON.parse(storedCartItems) : [];
   });
-  // const BASE_URL = "https://fakestoreapi.com/carts/2";
-
-  // const FetchCart = async () => {
-  //   try {
-  //     // Fetch cart items only if cartItems is empty
-  //     if (cartItems.length === 0) {
-  //       const response = await fetch(`${BASE_URL}`);
-  //       const result = await response.json();
-  //       fetchAdditionalProductInfo(result.products);
-  //     }
-  //       const fetchAdditionalProductInfo = async (products) => {
-  //   try {
-  //     const promises = products.map(async (item) => {
-  //       const response = await fetch(
-  //         `https://fakestoreapi.com/products/${item.productId}`
-  //       );
-  //       const productInfo = await response.json();
-  //       productInfo.count = item.quantity;
-  //       return productInfo;
-  //     });
-
-  //     const productDetails = await Promise.all(promises);
-  //     setCartItems(productDetails);
-  //   } catch (error) {
-  //     console.error("Error fetching additional product info:", error);
-  //   }
-  // };
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
 
   const addToCart = (product) => {
     console.log("Adding to cart:", product);
@@ -70,11 +41,11 @@ function App() {
     <>
       <nav className="navbar">
         <span className="navbar-searchbar-wrapper">
-          <span>Searchbar</span>
+          <SearchBar filterKey={searchFilter} setFilterKey={setSearchFilter} />
         </span>
         <span>
           {" "}
-          <img src={smiley}></img> AMAZIN{" "}
+          <img src={smiley} alt="Smiley" /> AMAZIN{" "}
         </span>
         <span className="navbar-links-wrapper">
           <Link to="/">All Products</Link>
@@ -92,6 +63,7 @@ function App() {
               setProducts={setProducts}
               setCartItems={setCartItems}
               addToCart={addToCart}
+              filterKey={searchFilter}
             />
           }
         ></Route>
