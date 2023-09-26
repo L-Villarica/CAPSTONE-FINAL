@@ -35,10 +35,10 @@ export default function CheckoutPage({ cartItems, removeFromCart }) {
             <label>Zip Code</label>
             <input type="text" name="zipCode" />
           </div>
-          <button className="checkout-button-wrapper" type="submit">
+        </form>
+        <button className="checkout-button-wrapper" type="submit">
             Checkout
           </button>
-        </form>
       </div>
   );
 }

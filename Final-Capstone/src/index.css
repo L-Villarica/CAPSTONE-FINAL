@@ -264,14 +264,19 @@ nav img {
   background-color: orange;
 }
 
-.checkout-form-container {
-  width: 50%;
-  font-size: 17px;
+.cart {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
+  align-items: center;
+}
+
+.checkout-form-container {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1em;
 }
 
 .checkout-button-wrapper {
@@ -280,7 +285,7 @@ nav img {
   flex-wrap: nowrap;
   justify-content: space-evenly;
   margin-top: 1em;
-  background-color: rgb(6, 226, 6) ;
+  background-color: rgb(6, 226, 6);
 }
 
 .checkout-button-wrapper :hover {
@@ -300,7 +305,7 @@ nav img {
 }
 
 .cart-container {
-  width: 50%;
+  width: 60%;
   height: calc(100vh - 60px);
   font-size: 17px;
   display: flex;
